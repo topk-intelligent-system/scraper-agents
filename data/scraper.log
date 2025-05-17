@@ -1,0 +1,33 @@
+2025-05-17 15:01:00.473 | INFO     | base_agent:run:60 - Starting scraping process
+2025-05-17 15:01:03.645 | INFO     | shopify_agent:connect:30 - Successfully initialized Playwright browser
+2025-05-17 15:01:03.645 | INFO     | shopify_agent:crawl:94 - Crawling collection: https://www.allbirds.com/collections/all
+2025-05-17 15:01:33.657 | ERROR    | shopify_agent:crawl:122 - Error during crawling: Timeout 30000ms exceeded.
+2025-05-17 15:01:33.875 | SUCCESS  | base_agent:save_json:52 - Data saved to data/shopify_products.json
+2025-05-17 15:01:33.875 | SUCCESS  | base_agent:run:65 - Scraping process completed successfully
+2025-05-17 15:17:30.185 | INFO     | base_agent:run:60 - Starting scraping process
+2025-05-17 15:17:30.916 | INFO     | shopify_agent:connect:33 - Successfully initialized Playwright browser
+2025-05-17 15:17:30.916 | INFO     | shopify_agent:crawl:147 - Trying entry point: https://www.fashionnova.com/collections/all
+2025-05-17 15:17:36.616 | INFO     | shopify_agent:crawl:153 - Found 60 product links
+2025-05-17 15:17:36.616 | INFO     | shopify_agent:_extract_product_details:51 - Extracting details from: https://www.fashionnova.com/products/gift-cards
+2025-05-17 15:17:54.841 | INFO     | shopify_agent:_extract_product_details:93 - Successfully extracted data for product: 
+2025-05-17 15:17:56.843 | INFO     | shopify_agent:_extract_product_details:51 - Extracting details from: https://www.fashionnova.com/products/leslie-long-sleeve-cropped-tee-wine
+2025-05-17 15:18:20.369 | INFO     | shopify_agent:_extract_product_details:93 - Successfully extracted data for product: 
+2025-05-17 15:18:22.371 | INFO     | shopify_agent:_extract_product_details:51 - Extracting details from: https://www.fashionnova.com/products/pick-me-up-multi-way-strapless-bra-nude
+2025-05-17 15:18:45.933 | INFO     | shopify_agent:_extract_product_details:93 - Successfully extracted data for product: 
+2025-05-17 15:18:47.934 | INFO     | shopify_agent:_extract_product_details:51 - Extracting details from: https://www.fashionnova.com/products/shania-double-lined-romper-black
+2025-05-17 15:19:11.857 | INFO     | shopify_agent:_extract_product_details:93 - Successfully extracted data for product: 
+2025-05-17 15:19:13.859 | INFO     | shopify_agent:_extract_product_details:51 - Extracting details from: https://www.fashionnova.com/products/maven-lipstick-value-set-bold
+2025-05-17 15:19:37.985 | INFO     | shopify_agent:_extract_product_details:93 - Successfully extracted data for product: 
+2025-05-17 15:19:39.987 | INFO     | shopify_agent:_extract_product_details:51 - Extracting details from: https://www.fashionnova.com/products/cute-and-comfy-pj-pant-set-red-combo
+2025-05-17 15:20:03.783 | INFO     | shopify_agent:_extract_product_details:93 - Successfully extracted data for product: 
+2025-05-17 15:20:05.784 | INFO     | shopify_agent:_extract_product_details:51 - Extracting details from: https://www.fashionnova.com/products/for-the-better-stretch-denim-shorts-peach
+2025-05-17 15:20:30.295 | INFO     | shopify_agent:_extract_product_details:93 - Successfully extracted data for product: 
+2025-05-17 15:20:32.296 | INFO     | shopify_agent:_extract_product_details:51 - Extracting details from: https://www.fashionnova.com/products/jordan-high-slit-jumpsuit-black
+2025-05-17 15:20:56.337 | INFO     | shopify_agent:_extract_product_details:93 - Successfully extracted data for product: 
+2025-05-17 15:20:58.338 | INFO     | shopify_agent:_extract_product_details:51 - Extracting details from: https://www.fashionnova.com/products/joan-4-piece-bikini-set-yellow
+2025-05-17 15:21:22.796 | INFO     | shopify_agent:_extract_product_details:93 - Successfully extracted data for product: 
+2025-05-17 15:21:24.797 | INFO     | shopify_agent:_extract_product_details:51 - Extracting details from: https://www.fashionnova.com/products/better-be-sure-mesh-jumpsuit-black
+2025-05-17 15:21:49.164 | INFO     | shopify_agent:_extract_product_details:93 - Successfully extracted data for product: 
+2025-05-17 15:21:51.164 | INFO     | shopify_agent:crawl:175 - Successfully scraped 10 products
+2025-05-17 15:21:51.352 | SUCCESS  | base_agent:save_json:52 - Data saved to data/shopify_products.json
+2025-05-17 15:21:51.352 | SUCCESS  | base_agent:run:65 - Scraping process completed successfully
