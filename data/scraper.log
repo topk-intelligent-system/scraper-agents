@@ -31,3 +31,338 @@
 2025-05-17 15:21:51.164 | INFO     | shopify_agent:crawl:175 - Successfully scraped 10 products
 2025-05-17 15:21:51.352 | SUCCESS  | base_agent:save_json:52 - Data saved to data/shopify_products.json
 2025-05-17 15:21:51.352 | SUCCESS  | base_agent:run:65 - Scraping process completed successfully
+2025-05-19 14:18:46.192 | INFO     | base_agent:run:60 - Starting scraping process
+2025-05-19 14:18:47.711 | INFO     | shopify_agent:connect:34 - Successfully initialized Playwright browser
+2025-05-19 14:18:47.712 | INFO     | shopify_agent:crawl:269 - Trying entry point: https://www.fashionnova.com/collections/all
+2025-05-19 14:18:53.918 | INFO     | shopify_agent:crawl:275 - Found 60 product links
+2025-05-19 14:18:53.919 | INFO     | shopify_agent:_extract_product_details:133 - Extracting details from: https://www.fashionnova.com/products/gift-cards
+2025-05-19 14:20:37.418 | INFO     | shopify_agent:_extract_product_details:212 - Successfully extracted data for product: 
+2025-05-19 14:20:39.419 | INFO     | shopify_agent:_extract_product_details:133 - Extracting details from: https://www.fashionnova.com/products/leslie-long-sleeve-cropped-tee-wine
+2025-05-19 14:22:48.944 | INFO     | shopify_agent:_extract_product_details:212 - Successfully extracted data for product: 
+2025-05-19 14:22:50.944 | INFO     | shopify_agent:_extract_product_details:133 - Extracting details from: https://www.fashionnova.com/products/maven-lipstick-value-set-bold
+2025-05-19 14:24:59.895 | INFO     | shopify_agent:_extract_product_details:212 - Successfully extracted data for product: 
+2025-05-19 14:25:01.896 | INFO     | shopify_agent:_extract_product_details:133 - Extracting details from: https://www.fashionnova.com/products/social-sport-active-bubble-skirt-butter-yellow
+2025-05-19 14:27:12.486 | INFO     | base_agent:run:60 - Starting scraping process
+2025-05-19 14:27:13.127 | INFO     | shopify_agent:connect:34 - Successfully initialized Playwright browser
+2025-05-19 14:27:13.127 | INFO     | shopify_agent:crawl:269 - Trying entry point: https://www.fashionnova.com/collections/all
+2025-05-19 14:27:17.739 | INFO     | shopify_agent:crawl:275 - Found 60 product links
+2025-05-19 14:27:17.740 | INFO     | shopify_agent:_extract_product_details:133 - Extracting details from: https://www.fashionnova.com/products/gift-cards
+2025-05-19 14:29:01.230 | INFO     | shopify_agent:_extract_product_details:212 - Successfully extracted data for product: 
+2025-05-19 14:29:03.231 | INFO     | shopify_agent:_extract_product_details:133 - Extracting details from: https://www.fashionnova.com/products/leslie-long-sleeve-cropped-tee-wine
+2025-05-19 14:31:12.205 | INFO     | shopify_agent:_extract_product_details:212 - Successfully extracted data for product: 
+2025-05-19 14:31:14.206 | INFO     | shopify_agent:_extract_product_details:133 - Extracting details from: https://www.fashionnova.com/products/maven-lipstick-value-set-bold
+2025-05-19 14:33:23.209 | INFO     | shopify_agent:_extract_product_details:212 - Successfully extracted data for product: 
+2025-05-19 14:33:25.210 | INFO     | shopify_agent:_extract_product_details:133 - Extracting details from: https://www.fashionnova.com/products/social-sport-active-bubble-skirt-butter-yellow
+2025-05-19 14:45:50.038 | INFO     | base_agent:run:60 - Starting scraping process
+2025-05-19 14:45:50.674 | INFO     | shopify_agent:connect:60 - Successfully initialized Playwright browser
+2025-05-19 14:45:50.675 | INFO     | shopify_agent:crawl:308 - Trying entry point: https://www.allbirds.com/collections/all
+2025-05-19 14:46:04.296 | WARNING  | shopify_agent:crawl:317 - Failed to access https://www.allbirds.com/collections/all: Timeout 10000ms exceeded.
+=========================== logs ===========================
+"load" event fired
+============================================================
+2025-05-19 14:46:04.298 | INFO     | shopify_agent:crawl:308 - Trying entry point: https://www.allbirds.com/collections/best-sellers
+2025-05-19 14:46:17.903 | WARNING  | shopify_agent:crawl:317 - Failed to access https://www.allbirds.com/collections/best-sellers: Timeout 10000ms exceeded.
+=========================== logs ===========================
+"load" event fired
+============================================================
+2025-05-19 14:46:17.905 | INFO     | shopify_agent:crawl:308 - Trying entry point: https://www.allbirds.com/products
+2025-05-19 14:46:30.650 | WARNING  | shopify_agent:crawl:317 - Failed to access https://www.allbirds.com/products: Timeout 10000ms exceeded.
+=========================== logs ===========================
+"load" event fired
+============================================================
+2025-05-19 14:46:30.650 | INFO     | shopify_agent:crawl:308 - Trying entry point: https://www.allbirds.com/collections/new-arrivals
+2025-05-19 14:46:45.210 | WARNING  | shopify_agent:crawl:317 - Failed to access https://www.allbirds.com/collections/new-arrivals: Timeout 10000ms exceeded.
+=========================== logs ===========================
+"load" event fired
+============================================================
+2025-05-19 14:46:45.211 | INFO     | shopify_agent:crawl:308 - Trying entry point: https://www.allbirds.com/collections/featured
+2025-05-19 14:46:58.831 | WARNING  | shopify_agent:crawl:317 - Failed to access https://www.allbirds.com/collections/featured: Timeout 10000ms exceeded.
+=========================== logs ===========================
+"load" event fired
+============================================================
+2025-05-19 14:46:58.831 | ERROR    | shopify_agent:crawl:346 - Error during crawling: cannot access local variable 'product_links' where it is not associated with a value
+2025-05-19 14:46:58.978 | SUCCESS  | base_agent:save_json:52 - Data saved to data/shopify_products.json
+2025-05-19 14:46:58.979 | SUCCESS  | base_agent:run:65 - Scraping process completed successfully
+2025-05-19 14:49:29.032 | INFO     | base_agent:run:60 - Starting scraping process
+2025-05-19 14:49:29.711 | INFO     | shopify_agent:connect:60 - Successfully initialized Playwright browser
+2025-05-19 14:49:29.711 | INFO     | shopify_agent:crawl:308 - Trying entry point: https://www.allbirds.com/collections/all
+2025-05-19 14:49:44.543 | WARNING  | shopify_agent:crawl:317 - Failed to access https://www.allbirds.com/collections/all: Timeout 10000ms exceeded.
+=========================== logs ===========================
+"load" event fired
+============================================================
+2025-05-19 14:49:44.545 | INFO     | shopify_agent:crawl:308 - Trying entry point: https://www.allbirds.com/collections/best-sellers
+2025-05-19 14:49:58.082 | WARNING  | shopify_agent:crawl:317 - Failed to access https://www.allbirds.com/collections/best-sellers: Timeout 10000ms exceeded.
+=========================== logs ===========================
+"load" event fired
+============================================================
+2025-05-19 14:49:58.083 | INFO     | shopify_agent:crawl:308 - Trying entry point: https://www.allbirds.com/products
+2025-05-19 14:50:11.123 | WARNING  | shopify_agent:crawl:317 - Failed to access https://www.allbirds.com/products: Timeout 10000ms exceeded.
+=========================== logs ===========================
+"load" event fired
+============================================================
+2025-05-19 14:50:11.124 | INFO     | shopify_agent:crawl:308 - Trying entry point: https://www.allbirds.com/collections/new-arrivals
+2025-05-19 14:50:25.717 | WARNING  | shopify_agent:crawl:317 - Failed to access https://www.allbirds.com/collections/new-arrivals: Timeout 10000ms exceeded.
+=========================== logs ===========================
+"load" event fired
+============================================================
+2025-05-19 14:50:25.718 | INFO     | shopify_agent:crawl:308 - Trying entry point: https://www.allbirds.com/collections/featured
+2025-05-19 14:50:39.514 | WARNING  | shopify_agent:crawl:317 - Failed to access https://www.allbirds.com/collections/featured: Timeout 10000ms exceeded.
+=========================== logs ===========================
+"load" event fired
+============================================================
+2025-05-19 14:50:39.515 | ERROR    | shopify_agent:crawl:346 - Error during crawling: cannot access local variable 'product_links' where it is not associated with a value
+2025-05-19 14:50:39.750 | SUCCESS  | base_agent:save_json:52 - Data saved to data/shopify_products.json
+2025-05-19 14:50:39.751 | SUCCESS  | base_agent:run:65 - Scraping process completed successfully
+2025-05-19 15:54:55.750 | INFO     | base_agent:run:60 - Starting scraping process
+2025-05-19 15:54:56.436 | INFO     | shopify_agent:connect:60 - Successfully initialized Playwright browser
+2025-05-19 15:54:56.436 | INFO     | shopify_agent:crawl:308 - Trying entry point: https://www.allbirds.com/collections/all
+2025-05-19 15:55:10.205 | WARNING  | shopify_agent:crawl:317 - Failed to access https://www.allbirds.com/collections/all: Timeout 10000ms exceeded.
+=========================== logs ===========================
+"load" event fired
+============================================================
+2025-05-19 15:55:10.206 | INFO     | shopify_agent:crawl:308 - Trying entry point: https://www.allbirds.com/collections/best-sellers
+2025-05-19 15:55:24.339 | WARNING  | shopify_agent:crawl:317 - Failed to access https://www.allbirds.com/collections/best-sellers: Timeout 10000ms exceeded.
+=========================== logs ===========================
+"load" event fired
+============================================================
+2025-05-19 15:55:24.339 | INFO     | shopify_agent:crawl:308 - Trying entry point: https://www.allbirds.com/products
+2025-05-19 15:55:37.071 | WARNING  | shopify_agent:crawl:317 - Failed to access https://www.allbirds.com/products: Timeout 10000ms exceeded.
+=========================== logs ===========================
+"load" event fired
+============================================================
+2025-05-19 15:55:37.071 | INFO     | shopify_agent:crawl:308 - Trying entry point: https://www.allbirds.com/collections/new-arrivals
+2025-05-19 15:55:51.484 | WARNING  | shopify_agent:crawl:317 - Failed to access https://www.allbirds.com/collections/new-arrivals: Timeout 10000ms exceeded.
+=========================== logs ===========================
+"load" event fired
+============================================================
+2025-05-19 15:55:51.486 | INFO     | shopify_agent:crawl:308 - Trying entry point: https://www.allbirds.com/collections/featured
+2025-05-19 15:56:05.220 | WARNING  | shopify_agent:crawl:317 - Failed to access https://www.allbirds.com/collections/featured: Timeout 10000ms exceeded.
+=========================== logs ===========================
+"load" event fired
+============================================================
+2025-05-19 15:56:05.221 | ERROR    | shopify_agent:crawl:351 - Error during crawling: cannot access local variable 'product_links' where it is not associated with a value
+2025-05-19 15:56:05.416 | INFO     | shopify_agent:extract_data:400 - Successfully normalized 0 out of 0 products
+2025-05-19 15:56:05.418 | SUCCESS  | base_agent:save_json:52 - Data saved to data/shopify_products.json
+2025-05-19 15:56:05.419 | SUCCESS  | base_agent:run:65 - Scraping process completed successfully
+2025-05-19 16:08:12.233 | INFO     | base_agent:run:60 - Starting scraping process
+2025-05-19 16:08:12.878 | INFO     | shopify_agent:connect:60 - Successfully initialized Playwright browser
+2025-05-19 16:08:12.878 | INFO     | shopify_agent:crawl:308 - Trying entry point: https://www.fashionnova.com/collections/all
+2025-05-19 16:08:22.995 | INFO     | shopify_agent:crawl:314 - Found 70 product links
+2025-05-19 16:08:22.995 | INFO     | shopify_agent:_extract_product_details:162 - Extracting details from: https://www.fashionnova.com/products/gift-cards
+2025-05-19 16:09:17.062 | INFO     | shopify_agent:_extract_product_details:244 - Successfully extracted data for product: Gift Card
+2025-05-19 16:09:17.064 | INFO     | shopify_agent:crawl:339 - Successfully extracted product 1/10
+2025-05-19 16:09:18.065 | INFO     | shopify_agent:_extract_product_details:162 - Extracting details from: https://www.fashionnova.com/products/leslie-long-sleeve-cropped-tee-wine
+2025-05-19 16:10:11.035 | INFO     | shopify_agent:_extract_product_details:244 - Successfully extracted data for product: Leslie Long Sleeve Cropped Tee - Wine
+2025-05-19 16:10:11.036 | INFO     | shopify_agent:crawl:339 - Successfully extracted product 2/10
+2025-05-19 16:10:12.037 | INFO     | shopify_agent:_extract_product_details:162 - Extracting details from: https://www.fashionnova.com/products/maven-lipstick-value-set-bold
+2025-05-19 16:11:05.025 | INFO     | shopify_agent:_extract_product_details:244 - Successfully extracted data for product: Maven Lipstick Value Set Bold
+2025-05-19 16:11:05.025 | INFO     | shopify_agent:crawl:339 - Successfully extracted product 3/10
+2025-05-19 16:11:06.027 | INFO     | shopify_agent:_extract_product_details:162 - Extracting details from: https://www.fashionnova.com/products/for-the-better-stretch-denim-shorts-peach
+2025-05-19 16:12:01.787 | INFO     | shopify_agent:_extract_product_details:244 - Successfully extracted data for product: For The Better Stretch Denim Shorts - Peach
+2025-05-19 16:12:01.789 | INFO     | shopify_agent:crawl:339 - Successfully extracted product 4/10
+2025-05-19 16:12:02.790 | INFO     | shopify_agent:_extract_product_details:162 - Extracting details from: https://www.fashionnova.com/products/jordan-high-slit-jumpsuit-black
+2025-05-19 16:12:56.539 | INFO     | shopify_agent:_extract_product_details:244 - Successfully extracted data for product: Jordan High Slit Jumpsuit - Black
+2025-05-19 16:12:56.539 | INFO     | shopify_agent:crawl:339 - Successfully extracted product 5/10
+2025-05-19 16:12:57.540 | INFO     | shopify_agent:_extract_product_details:162 - Extracting details from: https://www.fashionnova.com/products/better-be-sure-mesh-jumpsuit-black
+2025-05-19 16:13:50.333 | INFO     | shopify_agent:_extract_product_details:244 - Successfully extracted data for product: Better Be Sure Mesh Jumpsuit - Black
+2025-05-19 16:13:50.334 | INFO     | shopify_agent:crawl:339 - Successfully extracted product 6/10
+2025-05-19 16:13:51.335 | INFO     | shopify_agent:_extract_product_details:162 - Extracting details from: https://www.fashionnova.com/products/stacy-seamless-cable-legging-black
+2025-05-19 16:14:45.936 | INFO     | shopify_agent:_extract_product_details:244 - Successfully extracted data for product: Stacy Seamless Cable Legging - Black
+2025-05-19 16:14:45.937 | INFO     | shopify_agent:crawl:339 - Successfully extracted product 7/10
+2025-05-19 16:14:46.939 | INFO     | shopify_agent:_extract_product_details:162 - Extracting details from: https://www.fashionnova.com/products/into-the-layer-anklet-gold
+2025-05-19 16:15:40.888 | INFO     | shopify_agent:_extract_product_details:244 - Successfully extracted data for product: Into The Layer Anklet - Gold
+2025-05-19 16:15:40.889 | INFO     | shopify_agent:crawl:339 - Successfully extracted product 8/10
+2025-05-19 16:15:41.890 | INFO     | shopify_agent:_extract_product_details:162 - Extracting details from: https://www.fashionnova.com/products/modern-luxury-cuff-bracelet-gold
+2025-05-19 16:16:36.563 | INFO     | shopify_agent:_extract_product_details:244 - Successfully extracted data for product: Modern Luxury Cuff Bracelet - Gold
+2025-05-19 16:16:36.564 | INFO     | shopify_agent:crawl:339 - Successfully extracted product 9/10
+2025-05-19 16:16:37.565 | INFO     | shopify_agent:_extract_product_details:162 - Extracting details from: https://www.fashionnova.com/products/chic-shade-straw-bucket-hat-natural-combo
+2025-05-19 16:17:32.710 | INFO     | shopify_agent:_extract_product_details:244 - Successfully extracted data for product: Chic Shade Straw Bucket Hat - Natural/Combo
+2025-05-19 16:17:32.711 | INFO     | shopify_agent:crawl:339 - Successfully extracted product 10/10
+2025-05-19 16:17:33.712 | INFO     | shopify_agent:crawl:348 - Successfully scraped 10 out of 10 products
+2025-05-19 16:17:33.979 | DEBUG    | shopify_agent:extract_data:392 - Normalized product: Gift Card
+2025-05-19 16:17:33.980 | DEBUG    | shopify_agent:extract_data:392 - Normalized product: Leslie Long Sleeve Cropped Tee - Wine
+2025-05-19 16:17:33.980 | DEBUG    | shopify_agent:extract_data:392 - Normalized product: Maven Lipstick Value Set Bold
+2025-05-19 16:17:33.981 | DEBUG    | shopify_agent:extract_data:392 - Normalized product: For The Better Stretch Denim Shorts - Peach
+2025-05-19 16:17:33.984 | DEBUG    | shopify_agent:extract_data:392 - Normalized product: Jordan High Slit Jumpsuit - Black
+2025-05-19 16:17:33.984 | DEBUG    | shopify_agent:extract_data:392 - Normalized product: Better Be Sure Mesh Jumpsuit - Black
+2025-05-19 16:17:33.985 | DEBUG    | shopify_agent:extract_data:392 - Normalized product: Stacy Seamless Cable Legging - Black
+2025-05-19 16:17:33.985 | DEBUG    | shopify_agent:extract_data:392 - Normalized product: Into The Layer Anklet - Gold
+2025-05-19 16:17:33.986 | DEBUG    | shopify_agent:extract_data:392 - Normalized product: Modern Luxury Cuff Bracelet - Gold
+2025-05-19 16:17:33.986 | DEBUG    | shopify_agent:extract_data:392 - Normalized product: Chic Shade Straw Bucket Hat - Natural/Combo
+2025-05-19 16:17:33.987 | INFO     | shopify_agent:extract_data:400 - Successfully normalized 10 out of 10 products
+2025-05-19 16:17:33.988 | SUCCESS  | base_agent:save_json:52 - Data saved to data/shopify_products.json
+2025-05-19 16:17:33.988 | SUCCESS  | base_agent:run:65 - Scraping process completed successfully
+2025-05-19 16:52:39.695 | INFO     | base_agent:run:60 - Starting scraping process
+2025-05-19 16:52:40.515 | INFO     | shopify_agent:connect:60 - Successfully initialized Playwright browser
+2025-05-19 16:52:40.515 | INFO     | shopify_agent:crawl:351 - Trying entry point: https://www.allbirds.com/collections/all
+2025-05-19 16:52:54.095 | WARNING  | shopify_agent:crawl:360 - Failed to access https://www.allbirds.com/collections/all: Timeout 10000ms exceeded.
+=========================== logs ===========================
+"load" event fired
+============================================================
+2025-05-19 16:52:54.096 | INFO     | shopify_agent:crawl:351 - Trying entry point: https://www.allbirds.com/collections/best-sellers
+2025-05-19 16:53:07.285 | WARNING  | shopify_agent:crawl:360 - Failed to access https://www.allbirds.com/collections/best-sellers: Timeout 10000ms exceeded.
+=========================== logs ===========================
+"load" event fired
+============================================================
+2025-05-19 16:53:07.286 | INFO     | shopify_agent:crawl:351 - Trying entry point: https://www.allbirds.com/products
+2025-05-19 16:53:20.753 | WARNING  | shopify_agent:crawl:360 - Failed to access https://www.allbirds.com/products: Timeout 10000ms exceeded.
+=========================== logs ===========================
+"load" event fired
+============================================================
+2025-05-19 16:53:20.755 | INFO     | shopify_agent:crawl:351 - Trying entry point: https://www.allbirds.com/collections/new-arrivals
+2025-05-19 16:53:34.792 | WARNING  | shopify_agent:crawl:360 - Failed to access https://www.allbirds.com/collections/new-arrivals: Timeout 10000ms exceeded.
+=========================== logs ===========================
+"load" event fired
+============================================================
+2025-05-19 16:53:34.793 | INFO     | shopify_agent:crawl:351 - Trying entry point: https://www.allbirds.com/collections/featured
+2025-05-19 16:53:48.172 | WARNING  | shopify_agent:crawl:360 - Failed to access https://www.allbirds.com/collections/featured: Timeout 10000ms exceeded.
+=========================== logs ===========================
+"load" event fired
+============================================================
+2025-05-19 16:53:48.173 | ERROR    | shopify_agent:crawl:394 - Error during crawling: cannot access local variable 'product_links' where it is not associated with a value
+2025-05-19 16:53:48.286 | SUCCESS  | base_agent:save_json:52 - Data saved to data/shopify_products.json
+2025-05-19 16:53:48.286 | SUCCESS  | base_agent:run:65 - Scraping process completed successfully
+2025-05-19 16:59:33.061 | INFO     | base_agent:run:60 - Starting scraping process
+2025-05-19 16:59:33.714 | INFO     | shopify_agent:connect:102 - Successfully initialized Playwright browser with enhanced configuration
+2025-05-19 16:59:33.715 | INFO     | shopify_agent:crawl:423 - Trying entry point: https://www.allbirds.com/collections/all
+2025-05-19 16:59:46.822 | INFO     | shopify_agent:_handle_interrupt:27 - Received interrupt signal. Cleaning up...
+2025-05-19 16:59:47.645 | INFO     | shopify_agent:_handle_interrupt:27 - Received interrupt signal. Cleaning up...
+2025-05-19 16:59:48.389 | INFO     | shopify_agent:_handle_interrupt:27 - Received interrupt signal. Cleaning up...
+2025-05-19 16:59:52.906 | INFO     | shopify_agent:_handle_interrupt:27 - Received interrupt signal. Cleaning up...
+2025-05-19 16:59:53.758 | INFO     | shopify_agent:_handle_interrupt:27 - Received interrupt signal. Cleaning up...
+2025-05-19 16:59:54.166 | INFO     | shopify_agent:_handle_interrupt:27 - Received interrupt signal. Cleaning up...
+2025-05-19 16:59:54.361 | INFO     | shopify_agent:_handle_interrupt:27 - Received interrupt signal. Cleaning up...
+2025-05-19 16:59:54.523 | INFO     | shopify_agent:_handle_interrupt:27 - Received interrupt signal. Cleaning up...
+2025-05-19 17:00:31.697 | INFO     | base_agent:run:60 - Starting scraping process
+2025-05-19 17:00:32.363 | INFO     | shopify_agent:connect:102 - Successfully initialized Playwright browser with enhanced configuration
+2025-05-19 17:00:32.363 | INFO     | shopify_agent:crawl:423 - Trying entry point: https://www.allbirds.com/collections/all
+2025-05-19 17:01:32.368 | WARNING  | shopify_agent:crawl:456 - Failed to access https://www.allbirds.com/collections/all: Timeout 60000ms exceeded.
+2025-05-19 17:01:32.369 | INFO     | shopify_agent:crawl:423 - Trying entry point: https://www.allbirds.com/collections/best-sellers
+2025-05-19 17:02:32.377 | WARNING  | shopify_agent:crawl:456 - Failed to access https://www.allbirds.com/collections/best-sellers: Timeout 60000ms exceeded.
+2025-05-19 17:02:32.378 | INFO     | shopify_agent:crawl:423 - Trying entry point: https://www.allbirds.com/products
+2025-05-19 17:03:32.387 | WARNING  | shopify_agent:crawl:456 - Failed to access https://www.allbirds.com/products: Timeout 60000ms exceeded.
+2025-05-19 17:03:32.388 | INFO     | shopify_agent:crawl:423 - Trying entry point: https://www.allbirds.com/collections/new-arrivals
+2025-05-19 17:04:32.394 | WARNING  | shopify_agent:crawl:456 - Failed to access https://www.allbirds.com/collections/new-arrivals: Timeout 60000ms exceeded.
+2025-05-19 17:04:32.395 | INFO     | shopify_agent:crawl:423 - Trying entry point: https://www.allbirds.com/collections/featured
+2025-05-19 17:04:58.806 | INFO     | shopify_agent:_handle_interrupt:27 - Received interrupt signal. Cleaning up...
+2025-05-19 17:15:41.411 | INFO     | base_agent:run:60 - Starting scraping process
+2025-05-19 17:15:42.072 | INFO     | shopify_agent:connect:102 - Successfully initialized Playwright browser with enhanced configuration
+2025-05-19 17:15:42.073 | INFO     | shopify_agent:crawl:423 - Trying entry point: https://www.allbirds.com/collections/all
+2025-05-19 17:16:42.078 | WARNING  | shopify_agent:crawl:456 - Failed to access https://www.allbirds.com/collections/all: Timeout 60000ms exceeded.
+2025-05-19 17:16:42.078 | INFO     | shopify_agent:crawl:423 - Trying entry point: https://www.allbirds.com/collections/best-sellers
+2025-05-19 17:17:42.083 | WARNING  | shopify_agent:crawl:456 - Failed to access https://www.allbirds.com/collections/best-sellers: Timeout 60000ms exceeded.
+2025-05-19 17:17:42.084 | INFO     | shopify_agent:crawl:423 - Trying entry point: https://www.allbirds.com/products
+2025-05-19 17:18:42.095 | WARNING  | shopify_agent:crawl:456 - Failed to access https://www.allbirds.com/products: Timeout 60000ms exceeded.
+2025-05-19 17:18:42.096 | INFO     | shopify_agent:crawl:423 - Trying entry point: https://www.allbirds.com/collections/new-arrivals
+2025-05-19 17:19:42.109 | WARNING  | shopify_agent:crawl:456 - Failed to access https://www.allbirds.com/collections/new-arrivals: Timeout 60000ms exceeded.
+2025-05-19 17:19:42.110 | INFO     | shopify_agent:crawl:423 - Trying entry point: https://www.allbirds.com/collections/featured
+2025-05-19 17:20:42.117 | WARNING  | shopify_agent:crawl:456 - Failed to access https://www.allbirds.com/collections/featured: Timeout 60000ms exceeded.
+2025-05-19 17:20:42.119 | ERROR    | shopify_agent:crawl:460 - No product links found
+2025-05-19 17:20:42.278 | SUCCESS  | base_agent:save_json:52 - Data saved to data/shopify_products.json
+2025-05-19 17:20:42.279 | SUCCESS  | base_agent:run:65 - Scraping process completed successfully
+2025-05-19 17:22:00.222 | INFO     | base_agent:run:60 - Starting scraping process
+2025-05-19 17:22:00.879 | INFO     | shopify_agent:connect:102 - Successfully initialized Playwright browser with enhanced configuration
+2025-05-19 17:22:00.880 | INFO     | shopify_agent:crawl:423 - Trying entry point: https://www.allbirds.com/collections/all
+2025-05-19 17:23:00.886 | WARNING  | shopify_agent:crawl:456 - Failed to access https://www.allbirds.com/collections/all: Timeout 60000ms exceeded.
+2025-05-19 17:23:00.887 | INFO     | shopify_agent:crawl:423 - Trying entry point: https://www.allbirds.com/collections/best-sellers
+2025-05-19 17:24:00.902 | WARNING  | shopify_agent:crawl:456 - Failed to access https://www.allbirds.com/collections/best-sellers: Timeout 60000ms exceeded.
+2025-05-19 17:24:00.903 | INFO     | shopify_agent:crawl:423 - Trying entry point: https://www.allbirds.com/products
+2025-05-19 17:25:00.911 | WARNING  | shopify_agent:crawl:456 - Failed to access https://www.allbirds.com/products: Timeout 60000ms exceeded.
+2025-05-19 17:25:00.912 | INFO     | shopify_agent:crawl:423 - Trying entry point: https://www.allbirds.com/collections/new-arrivals
+2025-05-19 17:26:00.921 | WARNING  | shopify_agent:crawl:456 - Failed to access https://www.allbirds.com/collections/new-arrivals: Timeout 60000ms exceeded.
+2025-05-19 17:26:00.923 | INFO     | shopify_agent:crawl:423 - Trying entry point: https://www.allbirds.com/collections/featured
+2025-05-19 17:27:00.932 | WARNING  | shopify_agent:crawl:456 - Failed to access https://www.allbirds.com/collections/featured: Timeout 60000ms exceeded.
+2025-05-19 17:27:00.934 | ERROR    | shopify_agent:crawl:460 - No product links found
+2025-05-19 17:27:01.117 | SUCCESS  | base_agent:save_json:52 - Data saved to data/shopify_products.json
+2025-05-19 17:27:01.117 | SUCCESS  | base_agent:run:65 - Scraping process completed successfully
+2025-05-19 17:40:08.690 | INFO     | base_agent:run:60 - Starting scraping process
+2025-05-19 17:40:08.697 | ERROR    | base_agent:save_json:54 - Error saving data: [Errno 2] No such file or directory: 'data/data/shopify_products.json'
+2025-05-19 17:40:08.698 | ERROR    | base_agent:run:67 - Error during scraping process: [Errno 2] No such file or directory: 'data/data/shopify_products.json'
+2025-05-19 17:41:39.845 | INFO     | base_agent:run:60 - Starting scraping process
+2025-05-19 17:41:39.850 | ERROR    | base_agent:save_json:54 - Error saving data: [Errno 2] No such file or directory: 'data/data/shopify_products.json'
+2025-05-19 17:41:39.851 | ERROR    | base_agent:run:67 - Error during scraping process: [Errno 2] No such file or directory: 'data/data/shopify_products.json'
+2025-05-19 17:43:33.367 | ERROR    | shopify_api_agent:connect:50 - Failed to connect to Shopify store: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: /products.json (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x78a22665eb10>: Failed to resolve 'https' ([Errno -3] Temporary failure in name resolution)"))
+2025-05-19 17:43:33.367 | ERROR    | __main__:main:29 - Failed to connect to the store. Please check the URL and try again.
+2025-05-19 17:43:47.872 | ERROR    | shopify_api_agent:connect:50 - Failed to connect to Shopify store: HTTPSConnectionPool(host='https', port=443): Max retries exceeded with url: /products.json (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x780517e87920>: Failed to resolve 'https' ([Errno -3] Temporary failure in name resolution)"))
+2025-05-19 17:43:47.872 | ERROR    | __main__:main:29 - Failed to connect to the store. Please check the URL and try again.
+2025-05-19 17:46:09.574 | INFO     | shopify_api_agent:construct_url:67 - Constructed URL: https://www.allbirds.com/products.json
+2025-05-19 17:46:10.075 | ERROR    | shopify_api_agent:connect:50 - Failed to connect to Shopify store: Expecting value: line 1 column 2 (char 1)
+2025-05-19 17:46:10.079 | ERROR    | __main__:main:29 - Failed to connect to the store. Please check the URL and try again.
+2025-05-19 17:48:37.697 | INFO     | shopify_api_agent:construct_url:67 - Constructed URL: https://www.allbirds.com/products.json
+2025-05-19 17:48:38.043 | ERROR    | shopify_api_agent:connect:50 - Failed to connect to Shopify store: Expecting value: line 1 column 2 (char 1)
+2025-05-19 17:48:38.044 | ERROR    | __main__:main:29 - Failed to connect to the store. Please check the URL and try again.
+2025-05-19 17:49:44.377 | INFO     | shopify_api_agent:construct_url:86 - Constructed URL: https://www.allbirds.com/products.json
+2025-05-19 17:49:44.378 | INFO     | shopify_api_agent:connect:37 - Attempting to connect to https://www.allbirds.com/products.json
+2025-05-19 17:49:44.725 | INFO     | shopify_api_agent:connect:41 - Response status code: 200
+2025-05-19 17:49:44.728 | INFO     | shopify_api_agent:connect:42 - Response headers: {'Date': 'Mon, 19 May 2025 16:49:44 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'x-sorting-hat-podid': '79', 'x-sorting-hat-shopid': '11044168', 'x-storefront-renderer-rendered': '1', 'set-cookie': 'secure_customer_sig=; path=/; expires=Tue, 19 May 2026 16:49:44 GMT; secure; HttpOnly; SameSite=Lax, cart_currency=USD; path=/; expires=Mon, 02 Jun 2025 16:49:44 GMT; SameSite=Lax, _shopify_y=8369288A-638f-4C53-a2b0-685b085cb624; domain=allbirds.com; path=/; expires=Tue, 19 May 2026 22:49:44 GMT; SameSite=Lax, _shopify_s=4A9EB983-1a60-4638-8204-7e75b7df1671; domain=allbirds.com; path=/; expires=Mon, 19 May 2025 17:19:44 GMT; SameSite=Lax', 'etag': '"cacheable:bb952e865c76706bec2f7107b034a2f5"', 'content-encoding': 'br', 'x-cache': 'miss', 'x-frame-options': 'DENY', 'content-security-policy': "block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;", 'access-control-allow-origin': '*', 'strict-transport-security': 'max-age=7889238', 'x-shopid': '11044168', 'x-shardid': '79', 'vary': 'Accept, accept-encoding', 'content-language': 'en-US', 'powered-by': 'Shopify', 'server-timing': 'processing;dur=148;desc="gc:44", db;dur=33, db_async;dur=9.022, asn;desc="36903", edge;desc="LIS", country;desc="MA", servedBy;desc="8wtr", requestID;desc="f02aa503-3af3-45c7-90fc-631ecfd9464e-1747673384", cfRequestDuration;dur=200.999975', 'shopify-complexity-score': '1480', 'x-dc': 'gcp-europe-west1,gcp-europe-west1,gcp-europe-west1', 'x-request-id': 'f02aa503-3af3-45c7-90fc-631ecfd9464e-1747673384', 'Alt-Svc': 'h3=":443"; ma=86400', 'cf-cache-status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=tzrsYk%2BZ6iSl02qtIYgkW42cHWnW4BzYHB7XHlBic1PKvUh9Fk7NaP9dcPuhyhW4HCXlIWG3qyterJ0GNDjHjaAFL2Q9noZHP1dKtIvHG3bzSfp93xpF%2BLo5TJRm9%2FF5Ot4%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}', 'X-XSS-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'X-Permitted-Cross-Domain-Policies': 'none', 'X-Download-Options': 'noopen', 'Shopify-Edge-Ip': '23.227.38.74', 'Server': 'cloudflare', 'CF-RAY': '942516dd4e3bf369-LIS'}
+2025-05-19 17:49:44.732 | ERROR    | shopify_api_agent:connect:54 - Failed to parse JSON response: Expecting value: line 1 column 2 (char 1)
+2025-05-19 17:49:44.735 | ERROR    | shopify_api_agent:connect:55 - Response content: [M<Q؇����z 4R��?��X��۫V}���Ne���'w��A�%�cYH�=��Z%�͏RU�u�����_N�RdX�ɠ;�}��v�6ҙ��=�����Mg��J':�!��7 @i9�Dj�� �&�C����a����Ā#�%�82'њ!9�x;8�dn��!]��5u����	���*��~��p��7���dPs"������_9�IL��t��~�y[hW%&RKg�|\���2���,?�{ο���M��5�ش��`�.�k�&�m����~>l�.�iNjM9}���7ө6�&Nv4m3O�kN�c�y�޼���G���<^��6����������)]��ҧ�y���b���՚<�{�6��9��D���q~٥����%�?����������d���r9�yIy以OuY���)���[S��I?�Ӿ�/�D������}6���vI/�|L�^
+)ַ��0�j~>\S}�u��K�R�y�����������4�f�o;�]�5mS���3HF��܊�,�hvM4...
+2025-05-19 17:49:44.738 | ERROR    | __main__:main:29 - Failed to connect to the store. Please check the URL and try again.
+2025-05-19 17:52:05.787 | INFO     | shopify_api_agent:construct_url:98 - Constructed URL: https://www.allbirds.com/products.json
+2025-05-19 17:52:05.788 | INFO     | shopify_api_agent:connect:38 - Attempting to connect to https://www.allbirds.com/products.json
+2025-05-19 17:52:06.112 | INFO     | shopify_api_agent:connect:42 - Response status code: 200
+2025-05-19 17:52:06.114 | INFO     | shopify_api_agent:connect:43 - Response headers: {'Date': 'Mon, 19 May 2025 16:52:06 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'x-sorting-hat-podid': '79', 'x-sorting-hat-shopid': '11044168', 'x-storefront-renderer-rendered': '1', 'set-cookie': 'secure_customer_sig=; path=/; expires=Tue, 19 May 2026 16:52:06 GMT; secure; HttpOnly; SameSite=Lax, cart_currency=USD; path=/; expires=Mon, 02 Jun 2025 16:52:06 GMT; SameSite=Lax, _shopify_y=F3807019-ec91-4B95-86d9-ead2aed5148d; domain=allbirds.com; path=/; expires=Tue, 19 May 2026 22:52:06 GMT; SameSite=Lax, _shopify_s=4A9D3952-6d70-4E0B-8337-9d5c23d95c9d; domain=allbirds.com; path=/; expires=Mon, 19 May 2025 17:22:06 GMT; SameSite=Lax', 'etag': '"cacheable:be80d23190cc02c5d2e650fc11679439"', 'content-encoding': 'br', 'x-cache': 'miss', 'x-frame-options': 'DENY', 'content-security-policy': "block-all-mixed-content; frame-ancestors 'none'; upgrade-insecure-requests;", 'access-control-allow-origin': '*', 'strict-transport-security': 'max-age=7889238', 'x-shopid': '11044168', 'x-shardid': '79', 'vary': 'Accept, accept-encoding', 'content-language': 'en-US', 'powered-by': 'Shopify', 'server-timing': 'processing;dur=95;desc="gc:8", db;dur=26, db_async;dur=11.025, asn;desc="36903", edge;desc="MRS", country;desc="MA", servedBy;desc="gzvg", requestID;desc="b2154382-9ae1-4a3c-9bdb-9750a287197a-1747673525", cfRequestDuration;dur=138.999939', 'shopify-complexity-score': '950', 'x-dc': 'gcp-europe-west1,gcp-europe-west1,gcp-europe-west1', 'x-request-id': 'b2154382-9ae1-4a3c-9bdb-9750a287197a-1747673525', 'Alt-Svc': 'h3=":443"; ma=86400', 'cf-cache-status': 'DYNAMIC', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=S5D5rLS7aqllOnQNuKOAee0tLm9ntjPMNebtgPslueUBKL%2F%2FsFBXcVaa%2BC96a5beP7CZD0GiDq0v6GTzldpv63qk2TqF3K2EzX%2Bnz5K2p3rc7rQz91qyQdFYQZ9xzCv0Td8%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0.01,"report_to":"cf-nel","max_age":604800}', 'X-XSS-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'X-Permitted-Cross-Domain-Policies': 'none', 'X-Download-Options': 'noopen', 'Shopify-Edge-Ip': '23.227.38.74', 'Server': 'cloudflare', 'CF-RAY': '94251a51384ae19c-MRS'}
+2025-05-19 17:52:06.115 | ERROR    | shopify_api_agent:connect:57 - Failed to decompress Brotli response: BrotliDecompress failed
+2025-05-19 17:52:06.117 | ERROR    | __main__:main:29 - Failed to connect to the store. Please check the URL and try again.
+2025-05-19 17:53:51.034 | INFO     | shopify_api_agent:construct_url:86 - Constructed URL: https://www.allbirds.com/products.json
+2025-05-19 17:53:51.035 | INFO     | shopify_api_agent:connect:38 - Attempting to connect to https://www.allbirds.com/products.json
+2025-05-19 17:53:51.340 | INFO     | shopify_api_agent:connect:42 - Response status code: 200
+2025-05-19 17:53:51.351 | INFO     | shopify_api_agent:connect:68 - Successfully connected to Shopify store
+2025-05-19 17:53:51.354 | INFO     | base_agent:run:60 - Starting scraping process
+2025-05-19 17:53:51.355 | INFO     | shopify_api_agent:construct_url:86 - Constructed URL: https://www.allbirds.com/products.json
+2025-05-19 17:53:51.357 | INFO     | shopify_api_agent:connect:38 - Attempting to connect to https://www.allbirds.com/products.json
+2025-05-19 17:53:51.482 | INFO     | shopify_api_agent:connect:42 - Response status code: 200
+2025-05-19 17:53:51.496 | INFO     | shopify_api_agent:connect:68 - Successfully connected to Shopify store
+2025-05-19 17:53:51.499 | INFO     | shopify_api_agent:construct_url:86 - Constructed URL: https://www.allbirds.com/products.json
+2025-05-19 17:53:51.500 | INFO     | shopify_api_agent:fetch_products:104 - Fetching: https://www.allbirds.com/products.json?limit=250&page=1
+2025-05-19 17:53:52.430 | INFO     | shopify_api_agent:fetch_products:125 - Fetched 250 products from page 1. Total so far: 250
+2025-05-19 17:53:53.931 | INFO     | shopify_api_agent:fetch_products:104 - Fetching: https://www.allbirds.com/products.json?limit=250&page=2
+2025-05-19 17:53:54.582 | INFO     | shopify_api_agent:fetch_products:125 - Fetched 250 products from page 2. Total so far: 500
+2025-05-19 17:53:56.083 | INFO     | shopify_api_agent:fetch_products:104 - Fetching: https://www.allbirds.com/products.json?limit=250&page=3
+2025-05-19 17:53:56.292 | INFO     | shopify_api_agent:fetch_products:125 - Fetched 39 products from page 3. Total so far: 539
+2025-05-19 17:53:56.293 | INFO     | shopify_api_agent:crawl:247 - Fetched a total of 539 product entries for https://www.allbirds.com
+2025-05-19 17:53:56.752 | INFO     | shopify_api_agent:save_to_csv:228 - Successfully appended 5235 rows to data/shopify_products.csv
+2025-05-19 17:53:56.755 | ERROR    | base_agent:save_json:54 - Error saving data: [Errno 2] No such file or directory: 'data/data/shopify_products.json'
+2025-05-19 17:53:56.756 | ERROR    | base_agent:run:67 - Error during scraping process: [Errno 2] No such file or directory: 'data/data/shopify_products.json'
+2025-05-19 17:53:56.756 | ERROR    | __main__:main:37 - Error during scraping: [Errno 2] No such file or directory: 'data/data/shopify_products.json'
+2025-05-19 17:56:59.250 | INFO     | shopify_api_agent:construct_url:86 - Constructed URL: https://www.allbirds.com/products.json
+2025-05-19 17:56:59.250 | INFO     | shopify_api_agent:connect:38 - Attempting to connect to https://www.allbirds.com/products.json
+2025-05-19 17:56:59.586 | INFO     | shopify_api_agent:connect:42 - Response status code: 200
+2025-05-19 17:56:59.589 | INFO     | shopify_api_agent:connect:68 - Successfully connected to Shopify store
+2025-05-19 17:56:59.590 | INFO     | base_agent:run:65 - Starting scraping process
+2025-05-19 17:56:59.590 | INFO     | shopify_api_agent:construct_url:86 - Constructed URL: https://www.allbirds.com/products.json
+2025-05-19 17:56:59.591 | INFO     | shopify_api_agent:connect:38 - Attempting to connect to https://www.allbirds.com/products.json
+2025-05-19 17:56:59.694 | INFO     | shopify_api_agent:connect:42 - Response status code: 200
+2025-05-19 17:56:59.708 | INFO     | shopify_api_agent:connect:68 - Successfully connected to Shopify store
+2025-05-19 17:56:59.714 | INFO     | shopify_api_agent:construct_url:86 - Constructed URL: https://www.allbirds.com/products.json
+2025-05-19 17:56:59.716 | INFO     | shopify_api_agent:fetch_products:104 - Fetching: https://www.allbirds.com/products.json?limit=250&page=1
+2025-05-19 17:57:00.441 | INFO     | shopify_api_agent:fetch_products:125 - Fetched 250 products from page 1. Total so far: 250
+2025-05-19 17:57:01.941 | INFO     | shopify_api_agent:fetch_products:104 - Fetching: https://www.allbirds.com/products.json?limit=250&page=2
+2025-05-19 17:57:02.676 | INFO     | shopify_api_agent:fetch_products:125 - Fetched 250 products from page 2. Total so far: 500
+2025-05-19 17:57:04.177 | INFO     | shopify_api_agent:fetch_products:104 - Fetching: https://www.allbirds.com/products.json?limit=250&page=3
+2025-05-19 17:57:04.377 | INFO     | shopify_api_agent:fetch_products:125 - Fetched 39 products from page 3. Total so far: 539
+2025-05-19 17:57:04.379 | INFO     | shopify_api_agent:crawl:247 - Fetched a total of 539 product entries for https://www.allbirds.com
+2025-05-19 17:57:04.766 | INFO     | shopify_api_agent:save_to_csv:228 - Successfully appended 5235 rows to data/shopify_products.csv
+2025-05-19 17:57:05.103 | SUCCESS  | base_agent:save_json:57 - Data saved to /home/southern-bihi/Desktop/DevOps/ topk-intelligent-system /scraper-agents/data/shopify_products.json
+2025-05-19 17:57:05.104 | SUCCESS  | base_agent:run:70 - Scraping process completed successfully
+2025-05-19 17:57:05.109 | INFO     | __main__:main:35 - Scraping completed successfully
+2025-05-19 18:31:27.645 | INFO     | shopify_api_agent:construct_url:86 - Constructed URL: https://www.brooklinen.com/products.json
+2025-05-19 18:31:27.646 | INFO     | shopify_api_agent:connect:38 - Attempting to connect to https://www.brooklinen.com/products.json
+2025-05-19 18:31:32.093 | INFO     | shopify_api_agent:connect:42 - Response status code: 200
+2025-05-19 18:31:32.099 | INFO     | shopify_api_agent:connect:68 - Successfully connected to Shopify store
+2025-05-19 18:31:32.100 | INFO     | base_agent:run:65 - Starting scraping process
+2025-05-19 18:31:32.101 | INFO     | shopify_api_agent:construct_url:86 - Constructed URL: https://www.brooklinen.com/products.json
+2025-05-19 18:31:32.102 | INFO     | shopify_api_agent:connect:38 - Attempting to connect to https://www.brooklinen.com/products.json
+2025-05-19 18:31:32.256 | INFO     | shopify_api_agent:connect:42 - Response status code: 200
+2025-05-19 18:31:32.274 | INFO     | shopify_api_agent:connect:68 - Successfully connected to Shopify store
+2025-05-19 18:31:32.282 | INFO     | shopify_api_agent:construct_url:86 - Constructed URL: https://www.brooklinen.com/products.json
+2025-05-19 18:31:32.284 | INFO     | shopify_api_agent:fetch_products:104 - Fetching: https://www.brooklinen.com/products.json?limit=250&page=1
+2025-05-19 18:31:33.767 | INFO     | shopify_api_agent:fetch_products:125 - Fetched 250 products from page 1. Total so far: 250
+2025-05-19 18:31:35.268 | INFO     | shopify_api_agent:fetch_products:104 - Fetching: https://www.brooklinen.com/products.json?limit=250&page=2
+2025-05-19 18:31:36.667 | INFO     | shopify_api_agent:fetch_products:125 - Fetched 236 products from page 2. Total so far: 486
+2025-05-19 18:31:36.669 | INFO     | shopify_api_agent:crawl:247 - Fetched a total of 486 product entries for https://www.brooklinen.com
+2025-05-19 18:31:39.195 | INFO     | shopify_api_agent:save_to_csv:228 - Successfully appended 4420 rows to data/shopify_products.csv
+2025-05-19 18:31:40.007 | SUCCESS  | base_agent:save_json:57 - Data saved to /home/southern-bihi/Desktop/DevOps/ topk-intelligent-system /scraper-agents/data/shopify_products.json
+2025-05-19 18:31:40.008 | SUCCESS  | base_agent:run:70 - Scraping process completed successfully
+2025-05-19 18:31:40.017 | INFO     | __main__:main:35 - Scraping completed successfully

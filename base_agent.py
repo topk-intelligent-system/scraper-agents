@@ -46,7 +46,12 @@ class BaseAgent(ABC):
     def save_json(self, data: List[Dict], filename: str) -> None:
         """Save extracted data to JSON file."""
         try:
-            output_path = Path("data") / filename
+            # Convert filename to Path object and resolve it
+            output_path = Path(filename).resolve()
+            
+            # Ensure parent directory exists
+            output_path.parent.mkdir(parents=True, exist_ok=True)
+            
             with open(output_path, 'w', encoding='utf-8') as f:
                 json.dump(data, f, indent=2, ensure_ascii=False)
             logger.success(f"Data saved to {output_path}")

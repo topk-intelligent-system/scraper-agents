@@ -1,21 +1,15 @@
 # Shopify Product Scraper
 
-A Python-based solution for extracting product data from Shopify stores using the Storefront API with fallback to web scraping.
+A Python-based scraper for extracting product data from Shopify stores using their public API.
 
 ## Features
 
-- 🛍️ **Primary Features**
-  - GraphQL Storefront API support
-  - Automatic fallback to Playwright-based scraping if API is unavailable
-  - Pagination handling for complete product catalog extraction
-  - Rate limiting and error handling
-  - Configurable user agent and timeout settings
-
-- 🧱 **Technical Features**
-  - YAML-based configuration
-  - Comprehensive logging
-  - Automatic retries with exponential backoff
-  - Consistent JSON output format
+- Efficient API-based data extraction
+- Automatic pagination handling
+- Product variant support
+- JSON and CSV output formats
+- Robust error handling
+- Detailed logging
 
 ## Installation
 
@@ -36,83 +30,66 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-4. Install Playwright browsers:
-```bash
-playwright install chromium
-```
-
-## Configuration
-
-1. Copy the example configuration file:
-```bash
-cp config.example.yml config.yml
-```
-
-2. Edit `config.yml` with your settings:
-- Add your Shopify Storefront API access token (required for API access)
-- Configure fallback behavior, rate limits, and other settings
-- Customize user agent if needed
-
-Example configuration:
-```yaml
-shopify:
-  access_token: "your_access_token_here"
-  rate_limit: 2
-  max_retries: 3
-  fallback_to_scraping: true
-
-general:
-  log_level: "INFO"
-  timeout: 30
-  user_agent: "Mozilla/5.0 ..."
-```
-
 ## Usage
 
-Run the scraper using the `main.py` script:
+Run the scraper with a store URL:
 
 ```bash
-python main.py --store-url https://your-store.myshopify.com --config config.yml
+python main.py --store-url https://store-name.myshopify.com
 ```
 
-### Output
+### Output Files
 
-The scraper creates a JSON file in the `data/` directory:
-- `shopify_products.json`: Contains all extracted product data
+The scraper generates two output files in the `data` directory:
 
-Output format:
-```json
-{
-  "title": "Product Name",
-  "description": "Product Description",
-  "price": "99.99",
-  "currency": "USD",
-  "availability": true,
-  "average_rating": 4.5,
-  "vendor": "Vendor Name",
-  "category": "Category Name",
-  "product_url": "https://store.com/product"
-}
-```
+1. `shopify_products.json`: Raw product data in JSON format
+2. `shopify_products.csv`: Flattened product data with variants in CSV format
+
+### CSV Format
+
+The CSV file includes the following columns:
+- store_domain
+- product_id
+- title
+- handle
+- vendor
+- product_type
+- created_at
+- updated_at
+- published_at
+- tags
+- body_html
+- variant_id
+- variant_title
+- sku
+- price
+- compare_at_price
+- available
+- variant_created_at
+- variant_updated_at
+- image_src
+- all_image_srcs
+
+## Performance
+
+The scraper is optimized for performance:
+- Uses connection pooling
+- Implements efficient pagination
+- Handles compression automatically
+- Processes data in memory efficiently
 
 ## Error Handling
 
-- Automatic retries with exponential backoff for API requests
-- Fallback to web scraping if API access fails (configurable)
-- All errors are logged to `data/scraper.log`
-- Detailed error messages and stack traces for debugging
+The scraper includes comprehensive error handling:
+- Connection errors
+- API response validation
+- Data processing errors
+- File I/O errors
 
-## Development
+## Logging
 
-The codebase is organized into:
-- `base_agent.py`: Base scraping functionality
-- `shopify_agent.py`: Shopify-specific implementation
-- `main.py`: Command-line interface
+Logs are stored in `data/scraper.log` with rotation enabled.
 
 ## License
 
-MIT License - feel free to use this code for any purpose.
-
-## Disclaimer
-
-Ensure you have permission to access and extract data from Shopify stores and comply with their terms of service and robots.txt directives.
+[Your License Here]
