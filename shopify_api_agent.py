@@ -5,18 +5,173 @@ import time
 import logging
 import os
 import brotli
+from datetime import datetime
 from urllib.parse import urlparse, urlunparse
-from typing import List, Dict, Optional
+from typing import List, Dict, Optional, Any
 from base_agent import BaseAgent
 from loguru import logger
+from pymongo import MongoClient
+from pymongo.errors import ConnectionFailure
 
 class ShopifyAPIAgent(BaseAgent):
-    def __init__(self, store_url: str, config_path: Optional[str] = None):
-        """Initialize Shopify API agent with store URL and optional config."""
-        super().__init__(config_path)
+    def __init__(self, store_url: str):
+        """Initialize Shopify API agent with store URL."""
+        super().__init__()
         self.store_url = store_url.rstrip('/')
+        self.base_url = f"{self.store_url}/products.json"
+        self.mongo_client = None
+        self.db = None
+        self.products_collection = None
+        self.connect_to_mongodb()
         self._should_stop = False
         self.session = requests.Session()
+
+    def connect_to_mongodb(self):
+        """Connect to MongoDB and initialize collections."""
+        try:
+            # Get MongoDB connection string from environment variable
+            mongo_uri = os.getenv('MONGODB_URI', 'mongodb://localhost:27018/')
+            logger.info(f"Connecting to MongoDB at: {mongo_uri}")
+            
+            self.mongo_client = MongoClient(mongo_uri)
+            # Test the connection
+            self.mongo_client.admin.command('ping')
+            logger.info("Successfully connected to MongoDB")
+            
+            # Initialize database and collection
+            self.db = self.mongo_client['shopify_scraper']
+            self.products_collection = self.db['products']
+            
+            # Create indexes for better query performance
+            self.products_collection.create_index('id', unique=True)
+            self.products_collection.create_index('handle')
+            self.products_collection.create_index('created_at')
+            self.products_collection.create_index('store_url')
+            
+            # Log the current collection stats
+            try:
+                stats = self.db.command("collstats", "products")
+                logger.info(f"Current collection stats: {stats}")
+            except Exception as e:
+                logger.warning(f"Could not get collection stats: {e}")
+            
+        except ConnectionFailure as e:
+            logger.error(f"Failed to connect to MongoDB: {e}")
+            raise
+        except Exception as e:
+            logger.error(f"Error initializing MongoDB: {e}")
+            raise
+
+    def store_product_in_mongodb(self, product: Dict[str, Any]) -> bool:
+        """Store a single product in MongoDB."""
+        try:
+            # Add timestamp for when the product was scraped
+            product['scraped_at'] = datetime.utcnow()
+            product['store_url'] = self.store_url
+            
+            # Use upsert to update existing products or insert new ones
+            result = self.products_collection.update_one(
+                {'id': product['id'], 'store_url': self.store_url},
+                {'$set': product},
+                upsert=True
+            )
+            
+            if result.upserted_id:
+                logger.debug(f"Inserted new product with ID: {product['id']}")
+            else:
+                logger.debug(f"Updated existing product with ID: {product['id']}")
+            
+            return True
+        except Exception as e:
+            logger.error(f"Error storing product in MongoDB: {e}")
+            return False
+
+    def store_products_in_mongodb(self, products: List[Dict[str, Any]]) -> int:
+        """Store multiple products in MongoDB."""
+        success_count = 0
+        for product in products:
+            if self.store_product_in_mongodb(product):
+                success_count += 1
+        return success_count
+
+    def get_product_by_id(self, product_id: int) -> Optional[Dict[str, Any]]:
+        """Retrieve a product from MongoDB by ID."""
+        try:
+            return self.products_collection.find_one({'id': product_id, 'store_url': self.store_url})
+        except Exception as e:
+            logger.error(f"Error retrieving product from MongoDB: {e}")
+            return None
+
+    def get_all_products(self, limit: int = 0) -> List[Dict[str, Any]]:
+        """Retrieve all products from MongoDB for this store."""
+        try:
+            cursor = self.products_collection.find({'store_url': self.store_url})
+            if limit > 0:
+                cursor = cursor.limit(limit)
+            return list(cursor)
+        except Exception as e:
+            logger.error(f"Error retrieving products from MongoDB: {e}")
+            return []
+
+    def close_mongodb_connection(self):
+        """Close the MongoDB connection."""
+        if self.mongo_client:
+            self.mongo_client.close()
+            logger.info("MongoDB connection closed")
+
+    def scrape_products(self, limit: Optional[int] = None) -> List[Dict]:
+        """Scrape products from the Shopify store."""
+        products = []
+        page = 1
+        has_next_page = True
+        count = 0
+
+        while has_next_page and (limit is None or count < limit):
+            try:
+                # Construct the URL with pagination
+                url = f"{self.base_url}?page={page}&limit=250"  # Maximum allowed by Shopify
+
+                # Make the API request
+                headers = {
+                    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+                    'Accept': 'application/json',
+                    'Accept-Language': 'en-US,en;q=0.9',
+                    'Accept-Encoding': 'gzip, deflate, br',
+                    'Connection': 'keep-alive'
+                }
+                
+                response = self.session.get(url, headers=headers)
+                response.raise_for_status()
+                data = response.json()
+
+                # Extract products and store in MongoDB
+                batch_products = data.get('products', [])
+                if batch_products:
+                    self.store_products_in_mongodb(batch_products)
+                    products.extend(batch_products)
+                    count += len(batch_products)
+                    logger.info(f"Scraped {count} products so far")
+                    
+                    if len(batch_products) < 250:  # If we got less than the limit, we're done
+                        has_next_page = False
+                    else:
+                        page += 1
+                else:
+                    has_next_page = False
+
+                # Respect rate limits
+                time.sleep(1.5)  # Be polite and avoid rate limiting
+
+            except requests.exceptions.RequestException as e:
+                logger.error(f"Error scraping products: {e}")
+                break
+
+        logger.info(f"Successfully scraped {len(products)} products")
+        return products
+
+    def __del__(self):
+        """Cleanup when the object is destroyed."""
+        self.close_mongodb_connection()
 
     def connect(self) -> bool:
         """Initialize connection to the Shopify store."""

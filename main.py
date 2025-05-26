@@ -1,48 +1,39 @@
+import os
 import argparse
-import sys
+from dotenv import load_dotenv
 from loguru import logger
 from shopify_api_agent import ShopifyAPIAgent
-from pathlib import Path
 
 def main():
+    # Load environment variables
+    load_dotenv()
+    
+    # Set up argument parser
+    parser = argparse.ArgumentParser(description='Scrape products from a Shopify store')
+    parser.add_argument('store_url', help='URL of the Shopify store to scrape (e.g., https://store-name.myshopify.com)')
+    parser.add_argument('--limit', type=int, help='Limit the number of products to scrape')
+    args = parser.parse_args()
+    
     try:
-        parser = argparse.ArgumentParser(description='Shopify Product Scraper')
-        parser.add_argument('--store-url', required=True, help='URL of the Shopify store to scrape')
-        parser.add_argument('--config', help='Path to configuration file')
-        args = parser.parse_args()
-
-        # Configure logger
-        logger.remove()  # Remove default handler
-        logger.add(sys.stderr, format="<green>{time:YYYY-MM-DD HH:mm:ss}</green> | <level>{level: <8}</level> | <cyan>{name}</cyan>:<cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>")
-        logger.add("data/shopify_scraper.log", rotation="1 day", retention="7 days")
-
-        # Ensure data directory exists
-        Path("data").mkdir(exist_ok=True)
-
-        logger.info(f"Starting Shopify API scraper for {args.store_url}")
+        # Initialize the agent
+        agent = ShopifyAPIAgent(store_url=args.store_url)
         
-        # Initialize and run the API agent
-        agent = ShopifyAPIAgent(args.store_url, args.config)
+        # Scrape products (they will be automatically stored in MongoDB)
+        products = agent.scrape_products(limit=args.limit)
         
-        # Connect to the store
-        if not agent.connect():
-            logger.error("Failed to connect to the store. Please check the URL and try again.")
-            sys.exit(1)
-            
-        # Run the scraper
-        try:
-            agent.run("data/shopify_products.json")
-            logger.info("Scraping completed successfully")
-        except Exception as e:
-            logger.error(f"Error during scraping: {str(e)}")
-            sys.exit(1)
-            
-    except KeyboardInterrupt:
-        logger.warning("Scraping interrupted by user")
-        sys.exit(0)
+        # Print summary
+        logger.info(f"Successfully scraped and stored {len(products)} products in MongoDB")
+        
+        # Example of retrieving products from MongoDB
+        stored_products = agent.get_all_products(limit=5)
+        logger.info(f"Retrieved {len(stored_products)} products from MongoDB")
+        
     except Exception as e:
-        logger.error(f"Unexpected error: {str(e)}")
-        sys.exit(1)
+        logger.error(f"An error occurred: {e}")
+    finally:
+        # Cleanup
+        if 'agent' in locals():
+            agent.close_mongodb_connection()
 
 if __name__ == "__main__":
     main() 
