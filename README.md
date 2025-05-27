@@ -24,7 +24,7 @@ A Python-based scraper for extracting product data from public Shopify stores.
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone git@github.com:topk-intelligent-system/scraper-agents.git
 cd scraper-agents
 ```
 
