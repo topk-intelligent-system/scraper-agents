@@ -9,7 +9,7 @@ def check_mongodb_data():
         load_dotenv()
         
         # Get MongoDB URI from environment variable or use default
-        mongo_uri = os.getenv('MONGODB_URI', 'mongodb://localhost:27018/')
+        mongo_uri = os.getenv('MONGODB_URI', 'mongodb://localhost:27017/')
         logger.info(f"Connecting to MongoDB at: {mongo_uri}")
         
         # Connect to MongoDB

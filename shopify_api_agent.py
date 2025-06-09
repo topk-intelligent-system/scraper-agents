@@ -14,11 +14,22 @@ from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure
 
 class ShopifyAPIAgent(BaseAgent):
-    def __init__(self, store_url: str):
-        """Initialize Shopify API agent with store URL."""
+    def __init__(self, store_url: str, api_key: str = None, api_password: str = None):
+        """Initialize Shopify API agent with store URL and optional API credentials.
+        
+        Args:
+            store_url: The URL of the Shopify store.
+            api_key: The Shopify API key (optional, falls back to environment variable).
+            api_password: The Shopify API password (optional, falls back to environment variable).
+        """
         super().__init__()
         self.store_url = store_url.rstrip('/')
         self.base_url = f"{self.store_url}/products.json"
+        
+        # Set API credentials, with fallback to environment variables
+        self.api_key = api_key or os.getenv("SHOPIFY_API_KEY")
+        self.api_password = api_password or os.getenv("SHOPIFY_API_PASSWORD")
+        
         self.mongo_client = None
         self.db = None
         self.products_collection = None
@@ -30,7 +41,7 @@ class ShopifyAPIAgent(BaseAgent):
         """Connect to MongoDB and initialize collections."""
         try:
             # Get MongoDB connection string from environment variable
-            mongo_uri = os.getenv('MONGODB_URI', 'mongodb://localhost:27018/')
+            mongo_uri = os.getenv('MONGODB_URI', 'mongodb://localhost:27017/')
             logger.info(f"Connecting to MongoDB at: {mongo_uri}")
             
             self.mongo_client = MongoClient(mongo_uri)
@@ -140,7 +151,13 @@ class ShopifyAPIAgent(BaseAgent):
                     'Connection': 'keep-alive'
                 }
                 
-                response = self.session.get(url, headers=headers)
+                # Add authentication if credentials are provided
+                auth = None
+                if self.api_key and self.api_password:
+                    auth = (self.api_key, self.api_password)
+                    logger.info(f"Using API authentication for request to {url}")
+
+                response = self.session.get(url, headers=headers, auth=auth)
                 response.raise_for_status()
                 data = response.json()
 

@@ -1,6 +1,4 @@
-#!/bin/sh
-'''exec' "/home/southern-bihi/Desktop/DevOps/ topk-intelligent-system /scraper-agents/venv/bin/python3" "$0" "$@"
-' '''
+#!/home/mouadrguibi/smart_ecommerce_project/scraper-agents/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

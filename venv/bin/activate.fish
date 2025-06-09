@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV '/home/southern-bihi/Desktop/DevOps/ topk-intelligent-system /scraper-agents/venv'
+set -gx VIRTUAL_ENV /home/mouadrguibi/smart_ecommerce_project/scraper-agents/venv
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/"bin $PATH
