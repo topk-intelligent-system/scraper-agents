@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scraper-agents
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: scraper-agents
+  template:
+    metadata:
+      labels:
+        app: scraper-agents
+    spec:
+      containers:
+        - name: scraper-agents
+          image: scraper-agents:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5000
+          env:
+            - name: MONGODB_URI
+              value: mongodb://mongodb-service:27017
+            - name: MONGODB_DB
+              value: topk_db
+            - name: MONGODB_COLLECTION
+              value: products
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: scraper-agents-service
+spec:
+  selector:
+    app: scraper-agents
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+  type: ClusterIP 
